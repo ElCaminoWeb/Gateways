@@ -1,0 +1,213 @@
+@CHARSET "utf-8";
+
+
+.navbar, .navbar-brand, .navbar-nav > li > a {
+    background-color: #555555;
+    border-radius:0px;
+    color:#EEEEEE;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus,
+.navbar-brand:hover,
+.navbar-brand:focus{
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  color: #eeeeee;
+  background-color: #555555;
+}
+
+body {
+    background-color: #F3F3F3;
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+{
+    list-style-type: decimal !important;
+}
+
+section.hide {
+    display:none;
+}
+
+.col-lg-10 {
+    vertical-align:middle;
+}
+
+fieldset {
+    border-top: 1px solid #eeeeee;
+}
+
+p {
+    text-indent: 0px;
+}
+
+form {
+    padding-bottom:20px;
+}
+
+h4 {
+    text-align:center;
+    padding-bottom:10px;
+}
+
+input[type="checkbox"] {
+    margin-left:0px;
+    padding-top:5px;
+    margin-top:12px;
+}
+
+.btn {
+    width:100%;
+}
+
+.label {
+    min-width:260px;
+}
+
+span.glyphicon {
+    padding-right:5px;
+    padding-left:5px;
+    padding-top: 2px;
+    vertical-align:middle;
+}
+
+.btn-group.col-lg-2 {
+    padding-right:0px;
+    padding-bottom:5px;
+}
+
+.btn.btn-default.dropdown-toggle {
+    width:25px;
+}
+
+.btn.btn-small.pull-right {
+    vertical-align:middle;
+    width:60px;
+
+}
+.btn.btn-primary.add {
+    text-align:center;
+    vertical-align:middle;
+    width:95%;
+
+}
+
+.help-error {
+    vertical-align:middle;
+    color:#b94a48;
+}
+
+.control-group {
+    display:inline;
+}
+
+.sidebar.affix {
+    position: static;
+}
+
+#logo {
+    width:107px;
+    text-align:left;
+    padding-right:5px;
+}
+
+
+/* Side nav 
+-------------------------------------------------- */
+/* First level of nav */
+.sidenav {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top:    10px;
+    padding-bottom: 10px;
+    border: 2px solid #777777;
+    border-radius:5px;
+    width:100%;
+}
+
+
+/* All levels of nav */
+.sidebar .nav > li > a {
+    display: block;
+    color: #716b7a;
+    padding: 5px 20px;
+}
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    border-right: 1px solid #555555;
+}
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+    font-weight: bold;
+    color: #777777;
+    background-color: transparent;
+    border-right: 2px solid #555555;
+}
+
+/* Nav: second level (shown on .active) */
+.sidebar .nav .nav {
+    display: block;
+    margin-bottom: 8px;
+}
+.sidebar .nav > .active > ul {
+    display: block;
+}
+.sidebar .nav .nav > li > a {
+    padding-top:    3px;
+    padding-bottom: 3px;
+    padding-left: 30px;
+    font-size: 90%;
+}
+
+/* Responsive variations
+-------------------------------------------------- */
+
+
+/* Tablets and up */
+@media screen and (min-width: 768px) {
+
+    /* Show the side nav */
+    .sidebar {
+        display: block;
+    }
+    .btn.btn-primary.add {
+        width:25%;
+    }   
+    
+}
+
+/* Tablets/desktops and up */
+@media screen and (min-width: 992px) {
+    /* Adjust the logo selecter */
+    #logo {
+        text-align:right;
+    }
+
+
+    /* Widen the fixed sidebar */
+    .sidebar.affix {
+        width: 213px;
+    }
+    .sidebar.affix {
+        position: fixed; /* Undo the static from mobile-first approach */
+        top: 80px;
+    }
+    .sidebar .nav .nav {
+        display: none; /* Hide the sub menus when not active */
+    }
+
+    .sidebar.affix .sidenav {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

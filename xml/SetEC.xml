@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Request>
+	<Authentication>
+		<client>99004655</client>
+		<password>FpA2Yumq</password>
+	</Authentication>
+	<Transaction>
+		<TxnDetails>
+			<amount currency="GBP">10.00</amount>
+			<merchantreference>102942</merchantreference>
+		</TxnDetails>
+		<PayPalTxn>
+			<method>set_express_checkout</method>
+			<return_url>http://localhost/php/GetExpressCheckoutDetails.php</return_url>
+			<cancel_url>http://localhost/php/index.php</cancel_url>
+			<description>T-Shirt</description>
+			<payment_action>sale</payment_action>
+		</PayPalTxn>
+	</Transaction>
+</Request>

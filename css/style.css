@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+
+.affix {
+	
+}
+
+.nav-list{
+	margin-right:20%;
+	width:100%;
+}
+form {
+  	padding-right:0px;
+}
+
+.span, .span12, .span11, .span10, .span9, .span8, .span7, .span6, .span5, .span4, .span3, .span2, .span1 {		
+	margin-left:0;
+	padding-left:0;
+}
+
+.navbar {
+	margin-bottom:0px;
+}
+
+.navbar-inner{
+	border-radius:0px;
+}
+
+.navbar .brand{
+	text-shadow:none;
+}
+
+.navbar .nav>.active>a {
+	text-shadow:none;
+}
+
+
+
+div.controls {
+	padding-right:4px;
+	padding-bottom:10px;	
+}
+
+div.sellerName {
+	display: inline-block;
+  	height: 20px;
+  	padding: 4px 6px;
+  	margin-bottom: 10px;
+  	line-height: 20px;
+  	vertical-align: middle;
+  	width: 300px;
+  	text-align: middle;
+}
+
+div.span1.buttonContainer{
+	display: inline-block;
+  	padding-top: 4px;;
+	padding-bottom:4px;
+	text-align:center;
+	vertical-align:middle;
+	height:180px;
+}
+
+.paramName {
+  	margin-top:5px;
+	margin-bottom:5px;
+  	height:30px;
+  	vertical-align: middle;
+  	text-align: left;
+}
+
+input.paramCheckbox {
+  	height:30px;
+	padding-top:0px;
+	margin-top:0px;
+}
+
+
+.row-title {
+	padding-top:5px;
+	height:30px;	
+	padding-bottom:5px;
+	vertical-align:middle;
+}
+
+.row-check {
+	vertical-align:middle;
+	height:30px;
+  	padding-top:3px;
+ 	padding-bottom:5px;
+}
+
+.param{
+	margin-left:0px;
+}
+
+input[type='text'] {
+	padding-top:5px;
+  	padding-bottom:5px;
+  	width:75%;
+  	text-align: left;
+}
+
+#shippingAddressContainer {
+  display:none;
+  
+}
+
+.container-fluid {
+	padding-right:0px;
+	padding-left:0px;
+}
+#side {
+	background-color:#B9B9B9;
+	height:1250px;
+}
+
+
+
+div.row-fluid.lineItemContainer {
+  display: inline-block;
+  padding-top: 10px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom:10px;
+  margin-bottom: 10px;
+  border: 1px solid #BBB;
+}
+
+.prettyprint {
+  display: inline-block;
+  padding: 10px !important;
+  border: 1px solid #BBBBBB !important;
+}
+
+.result {
+  padding-left: 20px;
+}
+
+.brand {
+  cursor: default !important;
+}
+
+.brand:hover {
+  color:#000 !important;
+}
