@@ -1,8 +1,8 @@
 <?php
 include 'inc_classes.php';
-$gateway = new Gateway("SetExpressCheckout", "GetExpressCheckoutDetails", "DoExpressCheckoutPayment", "DoAuthorization", null);
+$gateway = new Gateway("SetExpressCheckout", "GetExpressCheckoutDetails", "DoExpressCheckoutPayment", "DoAuthorization", null,null);
 function getResponse($input, $method) {
-    $request["txntype"] = "preauth";
+    $request["txntype"] = "sale";
     $request["timezone"] = "GMT";
     $request["txndatetime"] = getDateTime();
     $request["storename"] = "13205400147";
@@ -48,6 +48,7 @@ function getResponse($input, $method) {
     
     $url = "https://test.ipg-online.com/connect/gateway/processing";
     
+    
     redirect($url, "post", $request);
 }
 
@@ -65,6 +66,19 @@ function createHash($chargetotal, $currency) {
     $ascii = bin2hex($stringToHash);
 
     return sha1($ascii);
+}
+function decode($serialised) {
+    $array = unserialize(urldecode($serialised));
+    $titles = array_keys($array);
+    $data = "\n";
+    for ($inc = 0; $inc < count($array); $inc ++) {
+        $current = $titles[$inc];
+
+        if ((!empty($array[$current])) && ($array[$current] != "")) {
+            $data .= "[" . $current . "] = " . $array[$current] . "\n";
+        }
+    }
+    return trim($data);
 }
 
 ?>

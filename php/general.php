@@ -42,40 +42,28 @@ function displaySessionValue($name, $default) {
     } else {
         $val = $default;
     }
-    echo "<script> var inp = document.getElementsByName(" . $name . ");";
-    echo "inp.setAttribute(\"name\",\"" . $val . "\");</script>" ;
-    
+    return $val;
 }
 
-function sortArray($array) {
-    $arrLen = sizeOf($array);
-    if ($arrLen == 2) {
-        if ($array[0] <= $array[1]) {
-            return $array;
-        } else {
-            $temp = $array[0];
-            $array[0] = $array[1];
-            $array[1] = $temp;
-            return $array;
-        }
-    } else {
-        $split = array_chunk($array, ($arrLen / 2));
-        return mergeArray(sortArray($split[0]), sortArray($split[1]));
-    }
-}
-
-function mergeArray($array1, $array2) {
-    if (isset($array1)) {
-        $titles1 = array_keys($array1);
-        $titles2 = array_keys($array2);
-        if ($array1[$titles1[0]] > $array2[$titles[0]]) {
-            $newArray2 = array($titles1[0] => $array1[$titles1[0]]);
-            $newArray2 = array_merge($newArray2, $array2);
-            mergeArray();
-        } else {
-            
-        }
-    }
+function loadSession ($array) {
+     echo "<script type=\"text/javascript\">
+         function getValue(name) {
+            var value = \"-1\";
+            //document.write(name);
+            switch(name) {
+            ";
+     $titles = array_keys($array);
+     for ($inc = 0; $inc < count($array); $inc ++) {
+         $current = $array[$titles[$inc]];
+         echo "case \"" . $titles[$inc] . "\":
+                        value = urldecode(\"" . $current . "\");
+                        break;";
+         
+     }
+     echo "}
+         return value;
+         }
+     </script>";
 }
 
 ?>

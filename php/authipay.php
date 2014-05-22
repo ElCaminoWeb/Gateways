@@ -22,7 +22,8 @@ function errorResponse($response) {
   } */
 
 function getResponse($method, $input) {
-    $order = "C-8b10e7a4-6827-4e52-8c5c-724b8d95192f";
+    $order = "C-0459e262-8e6d-4584-8a19-a6caf9c95d74";
+    $method = "Get Details";
     switch ($method) {
         case "capture":
             /* Capture */
@@ -127,6 +128,28 @@ function getResponse($method, $input) {
             </SOAP-ENV:Body>
             </SOAP-ENV:Envelope>";
             break;
+        case "Get Details":
+            $xmlStr = "<SOAP-ENV:Envelope
+            xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">
+            <SOAP-ENV:Header />
+            <SOAP-ENV:Body>
+            <ns5:IPGApiActionRequest 
+            xmlns:ns5=\"http://ipg-online.com/ipgapi/schemas/ipgapi\" 
+            xmlns:ns3=\"http://ipg-online.com/ipgapi/schemas/a1\"  
+            xmlns:ns4=\"http://ipg-online.com/ipgapi/schemas/v1\">
+            <ns3:Action>
+		<ns3:GetExternalTransactionStatus>
+			<ns3:OrderId>
+                            C-904a6f32-6e1a-4f3c-9556-6a6f46e25ebc
+                        </ns3:OrderId>
+			<ns3:TDate>1379425925</ns3:TDate>
+		</ns3:GetExternalTransactionStatus>
+            </ns3:Action>
+            </ns5:IPGApiActionRequest>
+            </SOAP-ENV:Body>
+            </SOAP-ENV:Envelope>";
+            break;
+
     }
 
     // initializing cURL with the IPG API URL:

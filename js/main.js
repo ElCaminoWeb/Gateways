@@ -1,17 +1,10 @@
 // JScript source code
 
-//include ('./js/edit.js');
-//include ('./js/create.js');
+include ('./js/bootstrap.js');
+include ('./js/edit.js');
+include ('./js/create.js');
+include ('./js/sideMenu.js');
 
-
-var numberOfSellers = 1;
-var numberOfItems = new Array();
-var notSupported = new Object();
-notSupported["Standard"] = [];
-notSupported["DataCash"] = ["DEVICE", "PAYMENTREQUEST_0_PAYMENTACTION", "LANDINGPAGE", "L_PAYMENTREQUEST_0_DESC0"];
-notSupported["CyberSource"] = ["SOLUTIONTYPE"];
-createSeller(0);
-//createSeller(1);
 function include(jsFilePath) {
     var js = document.createElement("script");
     js.type = "text/javascript";
@@ -20,29 +13,19 @@ function include(jsFilePath) {
     document.body.appendChild(js);
 }
 
-function noItems(none) {
-    var itemTotal = document.getElementById("PAYMENTREQUEST_0_ITEMAMT");
-    var newClass = (none) ? "form-group":"hide";
-    itemTotal.setAttribute("class",newClass);
-}
-
-function overrideAddress(override) {
-    var val = (override) ? "1" : "0";
-    document.getElementsByName("ADDROVERRIDE")[0].value = val;
+function urldecode(str) {
+    return decodeURIComponent((str + '').replace(/\+/g, '%20'));
 }
 
 function submitForm() {
     //checkEmpty();
-    document.getElementById("form").submit();
-}
-
-function loadSession() {
-    var inputs = document.getElementsByTagName('input');
-    for (var inc = 0; inc < inputs.length; inc++) {
-        var input = inputs[inc];
-        var name = input.getAttribute("name");
-        document.write("<?php displaySessionValue(" + name + ") ?>") ;
+    var sltGateway = document.getElementsByName("GATEWAY")[0];
+    var gateway = sltGateway.options[sltGateway.options.selectedIndex].getAttribute("value");
+    //alert(gateway);
+    if (gateway == "SagePay (API)") {
+        //document.getElementById("form").setAttribute("action","https://test.sagepay.com/Simulator/VSPFormGateway.asp");
     }
+    document.getElementById("form").submit();
 }
 
 function reset() {
@@ -53,9 +36,10 @@ function reset() {
             param.removeAttribute("disabled");
         }
     }
+    loadSession();
 }
 
-function supported(gateway) {
+/*function supported(gateway) {
     reset();
     var params = notSupported[gateway];
     for (var inc = 0; inc < params.length; inc++) {
@@ -63,8 +47,4 @@ function supported(gateway) {
         param.setAttribute("value", "");
         param.setAttribute("disabled", "disabled");
     }
-}
-
-var defaults = new Array();
-
-
+}*/
